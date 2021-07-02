@@ -36,26 +36,39 @@ label {
 }
 
 input {
-  padding: 3px;
+  padding: 0 5px;
+  margin: 0;
+  border: 1px solid #f76c6c;
+  border-radius: 5px;
+  height: 28px;
 }
 
 input:focus {
   outline: none;
 }
 
-form button {
-  background: #f76c6c;
-  border: 0;
-  padding: 5px;
+.active,
+.disabled {
+  border: none;
+  width: 80px;
+  height: 30px;
   border-radius: 5px;
   margin-left: 5px;
-  transition: ease-in-out 0.2s;
+  transition: all 0.2s ease-in-out;
   cursor: pointer;
 }
 
-form button:hover {
+.active {
+  background: #f76c6c;
+}
+
+.active:hover {
   background: black;
   color: #f76c6c;
+}
+
+.disabled {
+  background: rgb(145, 145, 145);
 }
 
 .new-member-form {
@@ -65,17 +78,19 @@ form button:hover {
 
 .member-list {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   flex-wrap: wrap;
 }
 
 .member-item {
-  padding: 5px 5px;
-  margin: 5px 0;
+  padding: 0.5em 0.5em;
+  margin: 0.5em 0.5em;
   background: #f76c6c;
   border-radius: 5px;
   width: 28%;
+  min-width: 100px;
   text-align: center;
+  font-weight: bold;
 }
 
 footer {

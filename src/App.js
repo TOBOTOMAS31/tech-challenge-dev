@@ -24,7 +24,7 @@ function App() {
         getData();
         console.log("Membre bien ajouté !", res);
       })
-      .catch((err) => console.log("Error dans l'ajout !", err));
+      .catch((err) => console.log("Erreur lors de l'ajout !", err));
   }
 
   return (
@@ -51,9 +51,15 @@ function App() {
             onChange={(e) => setAddPerson(e.target.value)}
             autoComplete="off"
           />
-          <button type="submit" onClick={handleSubmit}>
-            Envoyer
-          </button>
+          {addPerson.length < 3 || addPerson.length > 11 ? (
+            <button className="disabled" disabled>
+              Envoyer
+            </button>
+          ) : (
+            <button className="active" type="submit" onClick={handleSubmit}>
+              Envoyer
+            </button>
+          )}
         </form>
         <h2>Membres de l'équipage</h2>
         <section className="member-list">
